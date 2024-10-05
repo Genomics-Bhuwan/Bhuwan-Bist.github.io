@@ -7,9 +7,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --text-color: #333;
-            --bg-color: cornsilk;
+            --primary-color: #1a5f7a;
+            --secondary-color: #2d8bac;
+            --accent-color: #ffd700;
+            --text-color: #2c3e50;
+            --bg-color: #f5f5f5;
+            --section-bg: #ffffff;
         }
         
         body {
@@ -22,11 +25,11 @@
         }
         
         header {
-            background: var(--bg-color);
-            color: var(--primary-color);
+            background: var(--primary-color);
+            color: white;
             padding: 2rem 0;
             text-align: center;
-            border-bottom: 2px solid var(--primary-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         
         header h1 {
@@ -34,12 +37,18 @@
             font-weight: 700;
             margin: 0;
             font-size: 2.5rem;
+            color: var(--accent-color);
+        }
+        
+        header p {
+            color: #ffffff;
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
         }
         
         nav {
-            background: var(--bg-color);
+            background: var(--secondary-color);
             padding: 1rem 0;
-            border-bottom: 1px solid var(--primary-color);
         }
         
         nav ul {
@@ -56,19 +65,19 @@
         }
         
         nav ul li a {
-            color: var(--primary-color);
+            color: white;
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s;
         }
         
         nav ul li a:hover {
-            color: #3498db;
+            color: var(--accent-color);
         }
         
         .hero {
             position: relative;
-            height: 500px;
+            height: 600px;
             overflow: hidden;
         }
         
@@ -85,10 +94,17 @@
             transform: translate(-50%, -50%);
             text-align: center;
             color: white;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(26, 95, 122, 0.8);
             padding: 2rem;
             border-radius: 5px;
             max-width: 80%;
+        }
+        
+        .hero-text h2 {
+            color: var(--accent-color);
+            border: none;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
         }
         
         main {
@@ -99,18 +115,34 @@
         
         section {
             margin-bottom: 3rem;
-            background: white;
+            background: var(--section-bg);
             padding: 2rem;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
         
         h2 {
             color: var(--primary-color);
             font-family: 'Roboto', sans-serif;
             font-weight: 700;
-            border-bottom: 2px solid var(--primary-color);
+            border-bottom: 2px solid var(--accent-color);
             padding-bottom: 0.5rem;
+        }
+        
+        .about-image {
+            float: right;
+            margin: 0 0 20px 20px;
+            max-width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .research-header-image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
         }
         
         .research-interests {
@@ -120,10 +152,17 @@
         }
         
         .research-interests li {
-            background: var(--bg-color);
+            background: var(--primary-color);
+            color: white;
             padding: 0.5rem 1rem;
-            border-radius: 3px;
+            border-radius: 5px;
             text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .research-interests li:hover {
+            transform: translateY(-5px);
+            background: var(--secondary-color);
         }
         
         .photo-grid {
@@ -135,9 +174,11 @@
         
         .photo-grid img {
             width: 100%;
-            height: auto;
-            border-radius: 5px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
             transition: transform 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
         
         .photo-grid img:hover {
@@ -162,7 +203,13 @@
             }
             
             .hero {
-                height: 300px;
+                height: 400px;
+            }
+            
+            .about-image {
+                float: none;
+                margin: 20px auto;
+                display: block;
             }
         }
     </style>
@@ -184,7 +231,7 @@
     </nav>
 
     <div class="hero">
-        <img src="images/mountain.JPG" alt="Mountain landscape">
+        <img src="/api/placeholder/1200/600" alt="Mountain landscape">
         <div class="hero-text">
             <h2>Bhuwan Singh Bist</h2>
             <p>Examining genomic and phenomic variation to reveal the mechanisms supporting species survival in novel environments.</p>
@@ -193,6 +240,7 @@
 
     <main>
         <section id="about">
+            <img src="/api/placeholder/300/200" alt="Armadillo" class="about-image">
             <h2>About Me</h2>
             <p>I am a PhD student in Dr. Tereza Jezkova's lab at Miami University. My research focuses on conservation genomics, phylogenomics, and molecular evolution, utilizing bioinformatics and genomic tools to explore evolutionary processes. I am passionate about studying local adaptation, species delimitation, population genomics, and range expansion, with an emphasis on understanding the mechanisms driving biological diversity.</p>
             
@@ -208,8 +256,9 @@
         </section>
 
         <section id="research">
+            <img src="/api/placeholder/1200/300" alt="Armadillo Research" class="research-header-image">
             <h2>Research</h2>
-            <p>My goal is to understand how various interacting factors influence and drive genomic and ecological variation in organisms. To investigate these topics, I employ a range of bioinformatics techniques, including next-generation sequencing methods such as Sanger sequencing, ddRAD sequencing, and whole genome sequencing. Additionally, I utilize diverse statistical analyses, encompassing Bayesian methods, Frequentist approaches, and machine learning. By integrating these methods, I aim to develop effective measures for mammalian conservation.</p>
+            <p>My goal is to understand how various interacting factors influence and drive genomic and ecological variation in organisms. To investigate these topics, I employ a range of bioinformatics techniques, including next-generation sequencing methods such as Sanger sequencing, ddRAD sequencing, and whole genome sequencing.</p>
             
             <h3>Research Interests</h3>
             <ul class="research-interests">
@@ -222,28 +271,13 @@
                 <li>Comparative Genomics</li>
                 <li>Ecological Niche Modelling</li>
             </ul>
-            
-            <h3>Current Projects</h3>
-            <ul>
-                <li>Local adaptation in invasive nine-banded armadillo in eastern United States</li>
-                <li>Phylogenomics of Asian tree squirrel complex</li>
-            </ul>
-            
-            <div class="photo-grid">
-                <img src="images/Museum-Work.jpg" alt="Museum Work">
-                <img src="images/Labwork.jpg" alt="Lab Work">
-                <img src="images/193464211_1918887024942377_4987574233959164429_n.jpg" alt="Field Work">
-                <img src="images/IMG_4467.JPG" alt="Research Activity">
-            </div>
         </section>
 
         <section id="publications">
             <h2>Publications</h2>
             <ul>
-                <li>2021: <strong>Bist, B.S,</strong> Ghimire, P., K.C., N., Poudel, B.S., Pokheral, C.P., Poudyal, L.P., Wright, W., Basnet, A., Pradhan, A., Shah, K.B. 2021. Patterns and trends in two decades of research on Nepal's mammalian fauna (2000-2019): Examining the Past for Future Implications. Biodiversity and Conservation. 30, 3763–3790. <a href="https://doi.org/10.1007/s10531-021-02289-2" target="_blank">https://doi.org/10.1007/s10531-021-02289-2</a></li>
+                <li>2021: <strong>Bist, B.S,</strong> Ghimire, P., K.C., N., Poudel, B.S., Pokheral, C.P., Poudyal, L.P., Wright, W., Basnet, A., Pradhan, A., Shah, K.B. 2021. Patterns and trends in two decades of research on Nepal's mammalian fauna (2000-2019): Examining the Past for Future Implications. Biodiversity and Conservation. 30, 3763–3790.</li>
                 <li>2021: Ghimire, P., Pandey, N., Panthee, S., <strong>Bist, B.S.</strong> (2021). Large flocks of Sarus Crane Antigone antigone and Painted Stork Mycteria leucocephala in Nepal Indian BIRDS 17(1):21-22</li>
-                <li>2021: Baral, B, Bhusal, A, Pradhan, A, Poudel, S, Chhetri, S, Pangeni, M, & <strong>Bist, B.S</strong>. (2022). New Locality record of Crab-eating Mongoose (Herpestes urva Hodgson, 1836) from Parbat district of Nepal. Nepalese Journal of Zoology, 6(1), 48-52.</li>
-                <li>2021: <strong>Bist, B.S</strong>, P. Ghimire, B. Sharma, C. Khanal & A. Subedi (2021). Latrine site and its use pattern by Large Indian Civet Viverra zibetha Linnaeus, 1758: record from camera trap. Journal of Threatened Taxa 13(14): 20284–20287.</li>
             </ul>
         </section>
 
@@ -254,8 +288,8 @@
 
         <section id="contact">
             <h2>Contact</h2>
-            <p>Email: <a href="mailto:bhuwansinghbist38@gmail.com">bhuwansinghbist38@gmail.com</a></p>
-            <p>GitHub: <a href="https://github.com/Genomics-Bhuwan" target="_blank">github.com/Genomics-Bhuwan</a></p>
+            <p>Email: bhuwansinghbist38@gmail.com</p>
+            <p>GitHub: github.com/Genomics-Bhuwan</p>
         </section>
     </main>
 
@@ -264,3 +298,5 @@
     </footer>
 </body>
 </html>
+
+Version 2 of 2
