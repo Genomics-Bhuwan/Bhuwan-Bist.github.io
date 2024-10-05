@@ -8,9 +8,8 @@
     <style>
         :root {
             --primary-color: #2c3e50;
-            --secondary-color: #3498db;
             --text-color: #333;
-            --light-bg: #f5f6fa;
+            --bg-color: cornsilk;
         }
         
         body {
@@ -19,13 +18,15 @@
             margin: 0;
             padding: 0;
             color: var(--text-color);
+            background-color: var(--bg-color);
         }
         
         header {
-            background: var(--primary-color);
-            color: white;
+            background: var(--bg-color);
+            color: var(--primary-color);
             padding: 2rem 0;
             text-align: center;
+            border-bottom: 2px solid var(--primary-color);
         }
         
         header h1 {
@@ -36,8 +37,9 @@
         }
         
         nav {
-            background: var(--secondary-color);
+            background: var(--bg-color);
             padding: 1rem 0;
+            border-bottom: 1px solid var(--primary-color);
         }
         
         nav ul {
@@ -54,19 +56,19 @@
         }
         
         nav ul li a {
-            color: white;
+            color: var(--primary-color);
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s;
         }
         
         nav ul li a:hover {
-            color: var(--light-bg);
+            color: #3498db;
         }
         
         .hero {
             position: relative;
-            height: 400px;
+            height: 500px;
             overflow: hidden;
         }
         
@@ -97,26 +99,49 @@
         
         section {
             margin-bottom: 3rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         
         h2 {
             color: var(--primary-color);
             font-family: 'Roboto', sans-serif;
             font-weight: 700;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .research-interests {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .research-interests li {
+            background: var(--bg-color);
+            padding: 0.5rem 1rem;
+            border-radius: 3px;
+            text-align: center;
         }
         
         .photo-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
             margin: 2rem 0;
         }
         
         .photo-grid img {
             width: 100%;
-            height: 200px;
-            object-fit: cover;
+            height: auto;
             border-radius: 5px;
+            transition: transform 0.3s;
+        }
+        
+        .photo-grid img:hover {
+            transform: scale(1.05);
         }
         
         footer {
@@ -159,9 +184,9 @@
     </nav>
 
     <div class="hero">
-        <img src="/api/placeholder/1200/400" alt="Lab work">
+        <img src="images/mountain.JPG" alt="Mountain landscape">
         <div class="hero-text">
-            <h2>Understanding Genomic Variation</h2>
+            <h2>Bhuwan Singh Bist</h2>
             <p>Examining genomic and phenomic variation to reveal the mechanisms supporting species survival in novel environments.</p>
         </div>
     </div>
@@ -169,22 +194,34 @@
     <main>
         <section id="about">
             <h2>About Me</h2>
-            <p>I am a PhD student in Dr. Tereza Jezkova's lab at Miami University. My research focuses on conservation genomics, phylogenomics, and molecular evolution, utilizing bioinformatics and genomic tools to explore evolutionary processes.</p>
+            <p>I am a PhD student in Dr. Tereza Jezkova's lab at Miami University. My research focuses on conservation genomics, phylogenomics, and molecular evolution, utilizing bioinformatics and genomic tools to explore evolutionary processes. I am passionate about studying local adaptation, species delimitation, population genomics, and range expansion, with an emphasis on understanding the mechanisms driving biological diversity.</p>
             
             <h3>Education</h3>
             <ul>
-                <li><strong>Ph.D. in Ecology, Evolution, and Environmental Biology</strong> (2022 - 2027)<br>
+                <li><strong>Ph.D. in Ecology, Evolution, and Environmental Biology (2022 - 2027)</strong><br>
                     Miami University, Oxford, Ohio, USA</li>
-                <li><strong>M.Sc. in Wildlife Management and Biodiversity Conservation</strong> (2019 - 2022)<br>
-                    Tribhuvan University, Nepal</li>
-                <li><strong>B.Sc. in Forestry</strong> (2015 - 2019)<br>
+                <li><strong>M.Sc. in Wildlife Management and Biodiversity Conservation (2019 - 2022)</strong><br>
+                    School of Forestry and Natural Resource Management, Institute of Forestry, Tribhuvan University, Kathmandu, Nepal</li>
+                <li><strong>B.Sc. in Forestry (2015 - 2019)</strong><br>
                     Institute of Forestry, Pokhara Campus, Nepal</li>
             </ul>
         </section>
 
         <section id="research">
             <h2>Research</h2>
-            <p>My research integrates bioinformatics, genomics, and ecological approaches to understand how organisms adapt to and survive in changing environments. I use various next-generation sequencing methods and statistical analyses to develop effective conservation measures.</p>
+            <p>My goal is to understand how various interacting factors influence and drive genomic and ecological variation in organisms. To investigate these topics, I employ a range of bioinformatics techniques, including next-generation sequencing methods such as Sanger sequencing, ddRAD sequencing, and whole genome sequencing. Additionally, I utilize diverse statistical analyses, encompassing Bayesian methods, Frequentist approaches, and machine learning. By integrating these methods, I aim to develop effective measures for mammalian conservation.</p>
+            
+            <h3>Research Interests</h3>
+            <ul class="research-interests">
+                <li>Local Adaptation</li>
+                <li>Hybridization</li>
+                <li>Bioinformatics</li>
+                <li>Population Genomics</li>
+                <li>Species Delimitation</li>
+                <li>Range Expansion</li>
+                <li>Comparative Genomics</li>
+                <li>Ecological Niche Modelling</li>
+            </ul>
             
             <h3>Current Projects</h3>
             <ul>
@@ -193,16 +230,21 @@
             </ul>
             
             <div class="photo-grid">
-                <img src="/api/placeholder/400/300" alt="Research Photo 1">
-                <img src="/api/placeholder/400/300" alt="Research Photo 2">
-                <img src="/api/placeholder/400/300" alt="Research Photo 3">
+                <img src="images/Museum-Work.jpg" alt="Museum Work">
+                <img src="images/Labwork.jpg" alt="Lab Work">
+                <img src="images/193464211_1918887024942377_4987574233959164429_n.jpg" alt="Field Work">
+                <img src="images/IMG_4467.JPG" alt="Research Activity">
             </div>
         </section>
 
         <section id="publications">
-            <h2>Featured Publication</h2>
-            <p>Read my paper in Biodiversity and Conservation on patterns and trends in two decades of research on Nepal's mammalian fauna (2000–2019).</p>
-            <a href="https://link.springer.com/article/10.1007/s10531-021-02289-2" target="_blank">View Publication</a>
+            <h2>Publications</h2>
+            <ul>
+                <li>2021: <strong>Bist, B.S,</strong> Ghimire, P., K.C., N., Poudel, B.S., Pokheral, C.P., Poudyal, L.P., Wright, W., Basnet, A., Pradhan, A., Shah, K.B. 2021. Patterns and trends in two decades of research on Nepal's mammalian fauna (2000-2019): Examining the Past for Future Implications. Biodiversity and Conservation. 30, 3763–3790. <a href="https://doi.org/10.1007/s10531-021-02289-2" target="_blank">https://doi.org/10.1007/s10531-021-02289-2</a></li>
+                <li>2021: Ghimire, P., Pandey, N., Panthee, S., <strong>Bist, B.S.</strong> (2021). Large flocks of Sarus Crane Antigone antigone and Painted Stork Mycteria leucocephala in Nepal Indian BIRDS 17(1):21-22</li>
+                <li>2021: Baral, B, Bhusal, A, Pradhan, A, Poudel, S, Chhetri, S, Pangeni, M, & <strong>Bist, B.S</strong>. (2022). New Locality record of Crab-eating Mongoose (Herpestes urva Hodgson, 1836) from Parbat district of Nepal. Nepalese Journal of Zoology, 6(1), 48-52.</li>
+                <li>2021: <strong>Bist, B.S</strong>, P. Ghimire, B. Sharma, C. Khanal & A. Subedi (2021). Latrine site and its use pattern by Large Indian Civet Viverra zibetha Linnaeus, 1758: record from camera trap. Journal of Threatened Taxa 13(14): 20284–20287.</li>
+            </ul>
         </section>
 
         <section id="collaborate">
