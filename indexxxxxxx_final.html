@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhuwan Singh Bist - PhD Student</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a5f7a;
+            --secondary-color: #2d8bac;
+            --accent-color: #ffd700;
+            --text-color: #2c3e50;
+            --bg-color: #f5f5f5;
+            --section-bg: #ffffff;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+        
+        header {
+            background: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        header h1 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            margin: 0;
+            font-size: 2.5rem;
+            color: var(--accent-color);
+        }
+        
+        header p {
+            color: #ffffff;
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+        }
+        
+        nav {
+            background: var(--secondary-color);
+            padding: 1rem 0;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        nav ul li {
+            margin: 0 1rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+        
+        .hero {
+            position: relative;
+            height: 600px;
+            overflow: hidden;
+        }
+        
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            background: rgba(26, 95, 122, 0.8);
+            padding: 2rem;
+            border-radius: 5px;
+            max-width: 80%;
+        }
+        
+        .hero-text h2 {
+            color: var(--accent-color);
+            border: none;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        section {
+            margin-bottom: 3rem;
+            background: var(--section-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .about-image {
+            float: right;
+            margin: 0 0 20px 20px;
+            max-width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .research-header-image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .research-interests {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .research-interests li {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-align: center;
+        }
+        
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .photo-gallery figure {
+            margin: 0;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .photo-gallery img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .photo-gallery figure:hover img {
+            transform: scale(1.05);
+        }
+
+        .photo-gallery figcaption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 95, 122, 0.8);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul li {
+                margin: 0.5rem;
+            }
+            
+            .hero {
+                height: 400px;
+            }
+            
+            .about-image {
+                float: none;
+                margin: 20px auto;
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bhuwan Singh Bist</h1>
+        <p>PhD Student | Conservation Biologist | Bioinformatician | Mammalogist</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#latest-news">Latest News</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#collaboration">Collaboration</a></li>
+            <li><a href="#outreach">Outreach</a></li>
+            <li><a href="#books">Books</a></li>
+            <li><a href="#photography">Photography</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <img src="/api/placeholder/1200/600" alt="Mountain landscape">
+        <div class="hero-text">
+            <h2>Bhuwan Singh Bist</h2>
+            <p>Examining genomic and phenomic variation to reveal the mechanisms supporting species survival in novel environments.</p>
+        </div>
+    </div>
+
+    <main>
+        <section id="latest-news">
+            <h2>Check the Latest News</h2>
+            <div class="news-content">
+                <p>Bhuwan is attending "Bioinformatics Analysis for Conservation Genomics" with Dr. Klaus Koepfli from October 8–19, 2024 at Smithsonian Mason School of Conservation (SMSC), George Mason University, Front Royal, Virginia, USA.</p>
+                <img src="/api/placeholder/800/400" alt="Bioinformatics Training at SMSC">
+            </div>
+        </section>
+
+        <section id="about">
+            <img src="/api/placeholder/300/300" alt="About Me" class="about-image">
+            <h2>About Me</h2>
+            <p>I am a PhD student in Dr. Tereza Jezkova's lab at Miami University. My research focuses on conservation genomics, phylogenomics, and molecular evolution, utilizing bioinformatics and genomic tools to explore evolutionary processes. I am passionate about studying local adaptation, species delimitation, population genomics, and range expansion, with an emphasis on understanding the mechanisms driving biological diversity.</p>
+            
+            <h3>Education</h3>
+            <ul>
+                <li><strong>Ph.D. in Ecology, Evolution, and Environmental Biology (2022 - 2027)</strong><br>
+                    Miami University, Oxford, Ohio, USA</li>
+                <li><strong>M.Sc. in Wildlife Management and Biodiversity Conservation (2019 - 2022)</strong><br>
+                    School of Forestry and Natural Resource Management, Institute of Forestry, Tribhuvan University, Kathmandu, Nepal</li>
+                <li><strong>B.Sc. in Forestry (2015 - 2019)</strong><br>
+                    Institute of Forestry, Pokhara Campus, Nepal</li>
+            </ul>
+        </section>
+
+        <section id="research">
+            <h2>Research</h2>
+            <p>My goal is to understand how various interacting factors influence and drive genomic and ecological variation in organisms. To investigate these topics, I employ a range of bioinformatics techniques, including next-generation sequencing methods such as Sanger sequencing, ddRAD sequencing, and whole genome sequencing. Additionally, I utilize diverse statistical analyses, encompassing Bayesian methods, Frequentist approaches, and machine learning. By integrating these methods, I aim to develop effective measures for mammalian conservation.</p>
+            
+            <h3>Research Interests</h3>
+            <ul class="research-interests">
+                <li>Local Adaptation</li>
+                <li>Hybridization</li>
+                <li>Bioinformatics</li>
+                <li>Population Genomics</li>
+                <li>Species Delimitation</li>
+                <li>Range Expansion</li>
+                <li>Comparative Genomics</li>
+                <li>Ecological Niche Modelling</li>
+                <li>Artificial Intelligence in Genomics</li>
+            </ul>
+            
+            <h3>Current Projects</h3>
+            <ul>
+                <li>Local adaptation in invasive nine-banded armadillo in eastern United States.</li>
+                <li>Phylogenomics of Asian tree squirrel complex in SouthEast Asia.</li>
+            </ul>
+        </section>
+
+        <section id="collaboration">
+            <h2>Collaboration</h2>
+            <h3>Collaborative Projects</h3>
+            <p>Species delimitation of the armadillo in Ecuador, South America.</p>
+            
+            <h3>Open to Collaboration</h3>
+            <p>I am open to collaborating on any genomic projects prioritizing mammals followed by birds, reptiles, and amphibians.</p>
+        </section>
+
+        <section id="outreach">
+            <h2>Outreach</h2>
+            <p>I am a passionate conservationist advocating for wildlife through scientific articles as well as through newspaper articles:</p>
+            <ul>
+                <li><a href="https://www.thetrickyscribe.com/attention-required-rusty-spotted-cat/" target="_blank">Attention Required: Rusty Spotted Cat</a></li>
+                <li><a href="https://english.onlinekhabar.com/climate-change-impact-on-nepal-wildlife.html" target="_blank">Climate Change Impact on Nepal Wildlife</a></li>
+                <li><a href="https://thetrickyscribe.com/changing-climate-in-hindu-kush-himalayas/" target="_blank">Changing Climate in Hindu Kush Himalayas</a></li>
+            </ul>
+            <p>I campaign for game-based conservation approaches among school children and have promoted community-based conservation in western Nepal. I have trained over 500 students from forestry background as well as environmental science from Tribhuvan University and Far-Western University in biodiversity conservation and ecological monitoring techniques. I also keep on spreading fair and equitable use of science among university undergrads and grads.</p>
+        </section>
+
+        <section id="photography">
+            <h2>Photography</h2>
+            <p>I am a naturalist who enjoys capturing images of wildlife, forests, mountains, and rivers during my research expeditions, hikes, or travel.</p>
+            <div class="photo-gallery">
+                <figure>
+                    <img src="/api/placeholder/300/300" alt="Asian elephant">
+                    <figcaption>Asian elephant (<em>Elephas maximus</em>)</figcaption>
+                </figure>
+                <figure>
+                    <img src="/api/placeholder/300/300" alt="Swamp deer">
+                    <figcaption>Swamp deer (<em>Rucervus duvaucelii</em>)</figcaption>
+                </figure>
+                <figure>
+                    <img src="/api/placeholder/300/300" alt="Blackbuck">
+                    <figcaption>Blackbuck (<em>Antilope cervicapra</em>)</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:bhuwansinghbist38@gmail.com">bhuwansinghbist38@gmail.com</a></p>
+            <div class="social-links">
+                <a href="https://github.com/Genomics-Bhuwan" target="_blank">GitHub</a>
+                <a href="https://www.facebook.com/bhuwan.bist.75/" target="_blank">Facebook</a>
+                <a href="https://www.instagram.com/bhuwan_s_bist/" target="_blank">Instagram</a>
+                <a href="https://x.com/Bhuwan_S_Bist" target="_blank">Twitter</a>
+                <a href="https://www.researchgate.net/profile/Bhuwan-Bist" target="_blank">ResearchGate</a>
+                <a href="https://scholar.google.com/citations?user=oOkeXAcAAAAJ&hl=en" target="_blank">Google Scholar</a>
+                <a href="https://www.linkedin.com/in/bhuwan-singh-bist-70930810b/" target="_blank">LinkedIn</a>
+            </div>
+        </section><section id="conferences">
+    <h2>Conferences & Workshops</h2>
+    <div class="conference">
+        <h3>Past Presentation</h3>
+        <p>Bhuwan presented a poster on the "Evolutionary History of an Asian Tree Squirrel Species Complex" at the American Society of Mammalogists 103rd Annual Meeting held in Boulder, Colorado, from June 7 to June 12, 2024.</p>
+        <img src="images/450099017_2761264920704579_7032847670285988827_n.jpg" alt="Poster Presentation" style="max-width: 70%; height: auto;">
+    </div>
+    <div class="conference">
+        <h3>Upcoming Presentation</h3>
+        <p>Bhuwan will be giving an oral presentation titled “Genome-wide variation and signals of selection highlight the range expansion of the invasive nine-banded armadillo (Dasypus novemcinctus) in the Eastern United States” on November 1, 2024, at Miami University in Oxford, Ohio.</p>
+        <img src="images/Armadillo_Fancy_photo.jpg" alt="Upcoming Presentation" style="max-width: 70%; height: auto;">
+    </div>
+</section>
+<footer>
+    <p>&copy; 2024 Bhuwan Bist. All rights reserved.</p>
+</footer>
