@@ -159,16 +159,40 @@
             text-align: center;
         }
         
-        .outreach-images, .book-section {
-            display: flex;
-            justify-content: center;
-            margin-top: 2rem;
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
-        
-        .outreach-image, .book-image, .contact-photo {
-            max-width: 300px;
+
+        .photo-gallery figure {
+            margin: 0;
+            position: relative;
+            overflow: hidden;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .photo-gallery img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .photo-gallery figure:hover img {
+            transform: scale(1.05);
+        }
+
+        .photo-gallery figcaption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 95, 122, 0.8);
+            color: white;
+            padding: 1rem;
+            text-align: center;
         }
         
         .social-links {
@@ -186,27 +210,6 @@
         
         .social-links a:hover {
             color: var(--secondary-color);
-        }
-        
-        .latest-news {
-            background: var(--section-bg);
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            margin-bottom: 3rem;
-        }
-        
-        .latest-news img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin-top: 1rem;
-        }
-        
-        .news-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
         
         footer {
@@ -253,12 +256,13 @@
             <li><a href="#collaboration">Collaboration</a></li>
             <li><a href="#outreach">Outreach</a></li>
             <li><a href="#books">Books</a></li>
+            <li><a href="#photography">Photography</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <div class="hero">
-        <img src="images/mountain.JPG" alt="Mountain landscape">
+        <img src="/api/placeholder/1200/600" alt="Mountain landscape">
         <div class="hero-text">
             <h2>Bhuwan Singh Bist</h2>
             <p>Examining genomic and phenomic variation to reveal the mechanisms supporting species survival in novel environments.</p>
@@ -266,16 +270,16 @@
     </div>
 
     <main>
-        <section id="latest-news" class="latest-news">
+        <section id="latest-news">
             <h2>Check the Latest News</h2>
             <div class="news-content">
                 <p>Bhuwan is attending "Bioinformatics Analysis for Conservation Genomics" with Dr. Klaus Koepfli from October 8–19, 2024 at Smithsonian Mason School of Conservation (SMSC), George Mason University, Front Royal, Virginia, USA.</p>
-                <img src="images/Screenshot (244).png" alt="Bioinformatics Training at SMSC">
+                <img src="/api/placeholder/800/400" alt="Bioinformatics Training at SMSC">
             </div>
         </section>
 
         <section id="about">
-            <img src="images/AboutMe.jpg" alt="About Me" class="about-image">
+            <img src="/api/placeholder/300/300" alt="About Me" class="about-image">
             <h2>About Me</h2>
             <p>I am a PhD student in Dr. Tereza Jezkova's lab at Miami University. My research focuses on conservation genomics, phylogenomics, and molecular evolution, utilizing bioinformatics and genomic tools to explore evolutionary processes. I am passionate about studying local adaptation, species delimitation, population genomics, and range expansion, with an emphasis on understanding the mechanisms driving biological diversity.</p>
             
@@ -304,47 +308,60 @@
                 <li>Range Expansion</li>
                 <li>Comparative Genomics</li>
                 <li>Ecological Niche Modelling</li>
+                <li>Artificial Intelligence in Genomics</li>
             </ul>
             
             <h3>Current Projects</h3>
             <ul>
                 <li>Local adaptation in invasive nine-banded armadillo in eastern United States.</li>
-                <li>Phylogenomics of Asian tree squirrel complex in SouthEast Asia. </li>
+                <li>Phylogenomics of Asian tree squirrel complex in SouthEast Asia.</li>
             </ul>
         </section>
 
-       <section id="collaboration">
+        <section id="collaboration">
             <h2>Collaboration</h2>
             <h3>Collaborative Projects</h3>
-            <p>Species delimitation of the armadillo in Ecuador, South America. </p>
+            <p>Species delimitation of the armadillo in Ecuador, South America.</p>
+            
+            <h3>Open to Collaboration</h3>
+            <p>I am open to collaborating on any genomic projects prioritizing mammals followed by birds, reptiles, and amphibians.</p>
         </section>
 
         <section id="outreach">
             <h2>Outreach</h2>
             <p>I am a passionate conservationist advocating for wildlife through scientific articles as well as through newspaper articles:</p>
-            <ol>
+            <ul>
                 <li><a href="https://www.thetrickyscribe.com/attention-required-rusty-spotted-cat/" target="_blank">Attention Required: Rusty Spotted Cat</a></li>
                 <li><a href="https://english.onlinekhabar.com/climate-change-impact-on-nepal-wildlife.html" target="_blank">Climate Change Impact on Nepal Wildlife</a></li>
                 <li><a href="https://thetrickyscribe.com/changing-climate-in-hindu-kush-himalayas/" target="_blank">Changing Climate in Hindu Kush Himalayas</a></li>
-            </ol>
+            </ul>
             <p>I campaign for game-based conservation approaches among school children and have promoted community-based conservation in western Nepal. I have trained over 500 students from forestry background as well as environmental science from Tribhuvan University and Far-Western University in biodiversity conservation and ecological monitoring techniques. I also keep on spreading fair and equitable use of science among university undergrads and grads.</p>
-            <div class="outreach-images">
-                <img src="images/286413037_2200822113415532_8014874286520678958_n.jpg" alt="Outreach Activity" class="outreach-image">
-            </div>
         </section>
 
-        <section id="books">
-            <h2>Books</h2>
-            <div class="book-section">
-                <img src="images/WildlifeConservationandProtectedAreaManagement-images-1.jpg" alt="Wildlife Conservation Book" class="book-image">
+        <section id="photography">
+            <h2>Photography</h2>
+            <p>I am a naturalist who enjoys capturing images of wildlife, forests, mountains, and rivers during my research expeditions, hikes, or travel.</p>
+            <div class="photo-gallery">
+                <figure>
+                    <img src="/api/placeholder/300/300" alt="Asian elephant">
+                    <figcaption>Asian elephant (<em>Elephas maximus</em>)</figcaption>
+                </figure>
+                <figure>
+                    <img src="/api/placeholder/300/300" alt="Swamp deer">
+                    <figcaption>Swamp deer (<em>Rucervus duvaucelii</em>)</figcaption>
+                </figure>
+                <figure>
+                    <img src="/api/placeholder/300/300" alt="Blackbuck">
+                    <figcaption>Blackbuck (<em>Antilope cervicapra</em>)</figcaption>
+                </figure>
             </div>
         </section>
 
         <section id="contact">
             <h2>Contact</h2>
             <p>Email: <a href="mailto:bhuwansinghbist38@gmail.com">bhuwansinghbist38@gmail.com</a></p>
-            <p>GitHub: <a href="https://github.com/Genomics-Bhuwan" target="_blank">github.com/Genomics-Bhuwan</a></p>
             <div class="social-links">
+                <a href="https://github.com/Genomics-Bhuwan" target="_blank">GitHub</a>
                 <a href="https://www.facebook.com/bhuwan.bist.75/" target="_blank">Facebook</a>
                 <a href="https://www.instagram.com/bhuwan_s_bist/" target="_blank">Instagram</a>
                 <a href="https://x.com/Bhuwan_S_Bist" target="_blank">Twitter</a>
@@ -352,105 +369,19 @@
                 <a href="https://scholar.google.com/citations?user=oOkeXAcAAAAJ&hl=en" target="_blank">Google Scholar</a>
                 <a href="https://www.linkedin.com/in/bhuwan-singh-bist-70930810b/" target="_blank">LinkedIn</a>
             </div>
-            <p>If you are interested in talking about wildlife ecology, biogeography, or sports, I am open to it.
-
-<section id="research">
-    <img src="images/unnamed.jpg" alt="Research Image" class="research-header-image">
-    <!-- Rest of research section remains unchanged -->
-</section>
-
-<!-- 2. Publications section - update list -->
-<section id="publications">
-    <h2>Publications</h2>
-    <ul>
-        <li>2021: <strong>Bist, B.S</strong>., Ghimire, P., Poudyal, L.P., Pokharel, C.P., Sharma, P., Pathak, K. (2021). From extinction to recovery: the case of blackbuck Antilope cervicapra from Nepal. Mammal Research. https://doi.org/10.1007/s13364-021-00576-5</li>
-        <li>2021: <strong>Bist, B.S</strong>, Ghimire, P., K.C., N., Poudel, B.S., Pokheral, C.P., Poudyal, L.P., Wright, W., Basnet, A., Pradhan, A., Shah, K.B. 2021. Patterns and trends in two decades of research on Nepal's mammalian fauna (2000-2019): Examining the Past for Future Implications. Biodiversity and Conservation. 30, 3763–3790 (2021). https://doi.org/10.1007/s10531-021-02289-2</li>
-        <li>2021: Baral, B, Bhusal, A, Pradhan, A, Poudel, S, Chhetri, S, Pangeni, M, & <strong>Bist, B.S</strong>. (2022). New Locality record of Crab-eating Mongoose (Herpestes urva Hodgson, 1836) from Parbat district of Nepal. Nepalese Journal of Zoology, 6(1), 48-52.</li>
-        <li>2021: <strong>Bist, B.S</strong>, P. Ghimire, B. Sharma, C. Khanal & A. Subedi (2021). Latrine site and its use pattern by Large Indian Civet Viverra zibetha Linnaeus, 1758: record from camera trap. Journal of Threatened Taxa 13(14): 20284–20287.</li>
-        <li>2020: Basnet, A, Ghimire, P, Timilsina, Y.P, <strong>Bist, B.S</strong>. (2020). Otter research in Asia: Trends biases and future directions, Global Ecology and Conservation, Volume 24 2020, E01391, ISSN 2351-9894, HTTPS://DOI.ORG/10.1016/J.GECCO.2020.E01391.</li>
-        <li>2020: Parajuli, A, Gautam, A.P, Sharma, S.P, Bhujel, K.B, Sharma, G, Thapa, P.B, <strong>Bist, B.S</strong>, Poudel, S. (2020). Forest Fire Risk Mapping Using GIS and Remote Sensing in two major landscapes of Nepal, Geomatics, Natural Hazards and Risk, 11:1, 2569-2586</li>
-        <li>2020: <strong>Bist, B.S</strong>, Basnet, A, Ghimire, P, Baral, M, Neupane, A, Pokheral C.P.(2020). Locality records of Crab-eating Mongoose from Nepal. Mammal Tales #21, In: Zoo's Print 35(10):15-18.</li>
-    </ul>
-</section>
-
-<!-- 3. Outreach section - change to bullet format -->
-<section id="outreach">
-    <h2>Outreach</h2>
-    <p>I am a passionate conservationist advocating for wildlife through scientific articles as well as through newspaper articles:</p>
-    <ul>
-        <li><a href="https://www.thetrickyscribe.com/attention-required-rusty-spotted-cat/" target="_blank">Attention Required: Rusty Spotted Cat</a></li>
-        <li><a href="https://english.onlinekhabar.com/climate-change-impact-on-nepal-wildlife.html" target="_blank">Climate Change Impact on Nepal Wildlife</a></li>
-        <li><a href="https://thetrickyscribe.com/changing-climate-in-hindu-kush-himalayas/" target="_blank">Changing Climate in Hindu Kush Himalayas</a></li>
-    </ul>
-    <!-- Rest of outreach section remains unchanged -->
-</section>
-
-<!-- 4. Add Photography section -->
-<section id="photography">
-    <h2>Photography</h2>
-    <div class="photo-gallery">
-        <figure>
-            <img src="images/Elephant (2).jpg" alt="Asian elephant">
-            <figcaption>Asian elephant (<em>Elephas maximus</em>)</figcaption>
-        </figure>
-        <figure>
-            <img src="images/196284830_1918862968278116_1711915532505413550_n.jpg" alt="Swamp deer">
-            <figcaption>Swamp deer (<em>Rucervus duvaucelii</em>)</figcaption>
-        </figure>
-        <figure>
-            <img src="images/IMG_4467.JPG" alt="Blackbuck">
-            <figcaption>Blackbuck (<em>Antilope cervicapra</em>)</figcaption>
-        </figure>
-        <figure>
-            <img src="images/Good_rhino.jpg" alt="Greater one-horned rhinoceros">
-            <figcaption>Greater one-horned rhinoceros (<em>Rhinoceros unicornis</em>)</figcaption>
-        </figure>
-        <figure>
-            <img src="images/194298867_1918847501612996_1685321922935367219_n.jpg" alt="Himalayan gray langur">
-            <figcaption>Himalayan gray langur (<em>Semnopithecus ajax</em>)</figcaption>
-        </figure>
-        <figure>
-            <img src="images/IMG_4287.JPG" alt="Golden jackal">
-            <figcaption>Golden jackal (<em>Canis aureus</em>)</figcaption>
-        </figure>
+        </section><section id="conferences">
+    <h2>Conferences & Workshops</h2>
+    <div class="conference">
+        <h3>Past Presentation</h3>
+        <p>Bhuwan presented a poster on the "Evolutionary History of an Asian Tree Squirrel Species Complex" at the American Society of Mammalogists 103rd Annual Meeting held in Boulder, Colorado, from June 7 to June 12, 2024.</p>
+        <img src="images/450099017_2761264920704579_7032847670285988827_n.jpg" alt="Poster Presentation" style="max-width:25%; height:5%;">
+    </div>
+    <div class="conference">
+        <h3>Upcoming Presentation</h3>
+        <p>Bhuwan will be giving an oral presentation titled “Genome-wide variation and signals of selection highlight the range expansion of the invasive nine-banded armadillo (Dasypus novemcinctus) in the Eastern United States” on November 1, 2024, at Miami University in Oxford, Ohio.</p>
+        <img src="images/Armadillo_Fancy_photo.jpg" alt="Upcoming Presentation" style="max-width: 30%; height:5%;">
     </div>
 </section>
-
-<!-- Add this CSS for the photography section -->
-<style>
-.photo-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.photo-gallery figure {
-    margin: 0;
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.photo-gallery img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.photo-gallery figure:hover img {
-    transform: scale(1.05);
-}
-
-.photo-gallery figcaption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(26, 95, 122, 0.8);
-    color: white;
-    padding: 1rem;
-    text-align: center;
-}
-</style>
+<footer>
+    <p>&copy; 2024 Bhuwan Bist. All rights reserved.</p>
+</footer>
